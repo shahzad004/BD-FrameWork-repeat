@@ -33,7 +33,7 @@ public class DriverFactory {
                 if( isHeadless ){
                     chromeOptions.addArguments("--headless");
                 }
-                 driver =new ChromeDriver();
+                 driver =new ChromeDriver(chromeOptions);
                  break;
             case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
@@ -41,7 +41,7 @@ public class DriverFactory {
                 if( isHeadless ){
                     firefoxOptions.addArguments("--headless--");
                 }
-                 driver= new FirefoxDriver();
+                 driver= new FirefoxDriver(firefoxOptions);
                  break;
             case EDGE:
 
@@ -50,7 +50,7 @@ public class DriverFactory {
                 if( isHeadless ){
                     edgeOptions.addArguments("--headless");
                 }
-                 driver=new EdgeDriver();
+                 driver=new EdgeDriver(edgeOptions);
                  break;
 
             case SAFARI:
