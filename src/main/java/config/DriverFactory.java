@@ -16,6 +16,8 @@ public class DriverFactory {
 
    private static WebDriver driver ;
 
+
+
     public static WebDriver intializeDriver(){
 
 
@@ -28,6 +30,7 @@ public class DriverFactory {
 
         switch (browser){
             case CHROME :
+
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions=new ChromeOptions();
                 if( isHeadless ){
