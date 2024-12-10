@@ -6,14 +6,13 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.WebDriver;
 import pages.Google.GoogleMainPage;
 
-public class StepDefinitions extends BaseTest {
+public class NavigateToGoogleWebsiteSteps extends BaseTest {
 
-    @Before
-    public void BrowserSetup(){
-        setup();
-    }
+    GoogleMainPage mainPage=new GoogleMainPage(driver);
+
 
     @Given("I am On google Main Page")
     public void I_am_On_google_Main_Page(){
@@ -22,31 +21,15 @@ public class StepDefinitions extends BaseTest {
 
     @Then("I will Click on Gmail Button")
     public void I_will_Click_on_Gmail_Button() throws InterruptedException {
-        GoogleMainPage mainPage=new GoogleMainPage(driver);
+
         mainPage.clickOnGmail();
 
     }
 
     @Then("I will go back to Main Page")
-    public void I_will_go_back_to_Main_Page(){
+    public void I_will_go_back_to_Main_Page() throws InterruptedException {
         driver.navigate().back();
+        Thread.sleep(6000);
     }
 
-    @And("I will click on About Button")
-    public void I_will_click_on_About_Button() throws  InterruptedException{
-        GoogleMainPage mainPage=new GoogleMainPage(driver);
-        mainPage.about.click();
-        Thread.sleep(1200);
-    }
-
-
-
-
-
-
-
-    @After
-    public void tearDown(){
-        super.tearDown();
-    }
 }
