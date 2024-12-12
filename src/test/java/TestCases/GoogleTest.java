@@ -12,8 +12,12 @@ public class GoogleTest extends BaseTest {
     public void googleSite(){
         GoogleMainPage gp=new GoogleMainPage(driver);
 
-        WaitUtils.getTimeout();
-        gp.clickOnGmail();
+
+
+        WaitUtils.globalWait();
+        System.out.println("hei");
+        gp.signInButton.click();
+        System.out.println("hei");
 
 
         driver.navigate().back();

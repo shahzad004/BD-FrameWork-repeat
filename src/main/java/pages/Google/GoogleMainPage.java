@@ -16,6 +16,14 @@ public class GoogleMainPage {
         PageFactory.initElements(driver,this);
     }
 
+    @FindBy (xpath = "//a[@aria-label='Sign in']")
+    public WebElement signInButton;
+
+    public void clickOnSignIn(){
+        signInButton.click();
+    }
+
+
     // TO find Elements:
  @FindBy (xpath = " //a[text()='Store']")
    public WebElement store;
@@ -28,9 +36,9 @@ public class GoogleMainPage {
    public WebElement Gmail;
 
 
-public void clickOnGmail() throws InterruptedException {
+public void clickOnGmail()  {
     Gmail.click();
-    Thread.sleep(2000);
+
 }
 
 

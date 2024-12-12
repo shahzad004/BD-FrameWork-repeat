@@ -1,9 +1,6 @@
-Feature:Google Website
-
-  Scenario:Navigate To Google Website
-  Given I am On google Main Page
-  Then I will Click on Gmail Button
-  Then I will go back to Main Page
-
+Feature: Google Navigation
+  Scenario: Navigate To Google Website
+    Given  I am on the google website
+    When   I will click on about button
 
 
