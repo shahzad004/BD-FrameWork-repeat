@@ -16,10 +16,16 @@ public class DriverFactory {
 
    private static WebDriver driver ;
 
+   public  static WebDriver getDriver() {
+       if (driver == null) {
+           intializeDriver();
+             }
+           return driver;
+
+   }
 
 
-    public static WebDriver intializeDriver(){
-
+    private static WebDriver intializeDriver(){
 
         Browser browser=Browser.valueOf(ConfigManager.getProperty("browser").toUpperCase());
         System.out.println(browser);
@@ -70,5 +76,13 @@ public class DriverFactory {
 
     }
 
+    public  static void quitDriver(){
+        if(driver != null){
+
+            driver.quit();
+            driver=null;
+
+        }
+    }
 
 }

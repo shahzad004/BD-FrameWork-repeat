@@ -13,7 +13,6 @@ import java.time.Duration;
 public class WaitUtils {
 
 
-
     public static Duration getTimeout(){
 
      String timeoutValue= ConfigManager.getProperty("timeout");

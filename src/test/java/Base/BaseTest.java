@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.sql.DriverManager;
+
 public class BaseTest {
 
    public WebDriver driver;
@@ -17,7 +19,7 @@ public class BaseTest {
 
   @BeforeMethod
     public void setup(){
-      driver= DriverFactory.intializeDriver();
+      driver= DriverFactory.getDriver();
       driver.manage().window().maximize();
       driver.get(baseUrl);
 
@@ -26,13 +28,8 @@ public class BaseTest {
   }
 
 @AfterMethod
-  public void tearDown(){
-      if(driver != null){
-
-          driver.quit();
-
-          logger.info("THe browser is quit");
-      }
+  public static void tearDown(){
+    DriverFactory.quitDriver();
   }
 
 

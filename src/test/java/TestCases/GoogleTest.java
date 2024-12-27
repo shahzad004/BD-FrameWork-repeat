@@ -2,7 +2,7 @@ package TestCases;
 
 import Base.BaseTest;
 import org.testng.annotations.Test;
-import pages.Google.GoogleMainPage;
+import pages.Google.GoogleMainPage_PF;
 import utils.WaitUtils;
 
 public class GoogleTest extends BaseTest {
@@ -10,18 +10,17 @@ public class GoogleTest extends BaseTest {
 
     @Test
     public void googleSite(){
-        GoogleMainPage gp=new GoogleMainPage(driver);
-
-
+        GoogleMainPage_PF gp=new GoogleMainPage_PF(driver);
 
         WaitUtils.globalWait();
         System.out.println("hei");
-        gp.signInButton.click();
-        System.out.println("hei");
 
+        gp.clickOnAbout();
 
         driver.navigate().back();
-        gp.about.click();
+
+        WaitUtils.globalWait();
+        gp.clickOnAbout();
 
     }
 
